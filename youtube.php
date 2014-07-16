@@ -7,15 +7,11 @@ $xml = file_get_contents($url);
 
 $top = new SimpleXMLElement($xml);
 
+print_r($top);
+
 $title = (string)$top->channel->item[0]->title[0];
 
 $url = (string)$top->channel->item[0]->link[0];
-
-// $html = file_get_html($url);
-// $elt = $html->find("h3.yt-lockup-title a");
-// $title = $elt[0]->attr["title"];
-// $url = $elt[0]->attr["href"];
-// printf('{"title": "%s", "url": "%s"}', str_replace("&quot;", "\\\"", $title), $url);
 
 // create an associative array with link and title for youtube
 $youtubeArray = array("url" => $url,
