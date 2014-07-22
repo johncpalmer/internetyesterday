@@ -7,8 +7,6 @@ $xml = file_get_contents($url);
 
 $top = new SimpleXMLElement($xml);
 
-print_r($top);
-
 $title = (string)$top->channel->item[0]->title[0];
 
 $url = (string)$top->channel->item[0]->link[0];
